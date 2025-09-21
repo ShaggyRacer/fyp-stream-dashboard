@@ -1,0 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCujgYf0PZkwh1i7qjO-n4zu5yngt2HN8A",
+  authDomain: "fyp-stream-dashboard.firebaseapp.com",
+  projectId: "fyp-stream-dashboard",
+  storageBucket: "fyp-stream-dashboard.firebasestorage.app",
+  messagingSenderId: "838573504155",
+  appId: "1:838573504155:web:754c20698b77143d1c383e",
+  measurementId: "G-XXKZCKV3EJ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
