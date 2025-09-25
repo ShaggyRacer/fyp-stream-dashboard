@@ -26,7 +26,7 @@ const redirectUser = async (uid: string, email: string, displayName: string | nu
 
   if (error && error.code === "PGRST116") {
     // No record found → insert new user
-    const { data: newUser, error: insertError } = await supabase
+    const { error: insertError } = await supabase
       .from("users")
       .insert([
         {

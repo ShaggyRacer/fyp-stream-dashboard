@@ -12,7 +12,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchProfile = async () => {
       if (user) {
-        const { data, error } = await supabase
+        const { data } = await supabase
           .from("users")
           .select("display_name")
           .eq("uid", user.uid)
