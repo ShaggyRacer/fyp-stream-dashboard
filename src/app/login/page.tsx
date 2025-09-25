@@ -72,9 +72,13 @@ const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
     await redirectUser(result.user.uid, result.user.email!, result.user.displayName);
-  } catch (err: any) {
+  } catch (err: unknown) {
+  if (err instanceof Error) {
     setError(err.message);
+  } else {
+    setError("Unexpected error occurred");
   }
+}
 };
 
 // Email/Password Login
@@ -83,9 +87,13 @@ const handleEmailLogin = async (e: React.FormEvent) => {
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
     await redirectUser(result.user.uid, result.user.email!, result.user.displayName);
-  } catch (err: any) {
+  } catch (err: unknown) {
+  if (err instanceof Error) {
     setError(err.message);
+  } else {
+    setError("Unexpected error occurred");
   }
+}
 };
 
   return (
